@@ -9,11 +9,12 @@ resource "google_compute_region_instance_group_manager" "mig" {
     instance_template = google_compute_instance_template.template.id
   }
 
+  # ❌ Still "bad design" but now VALID
   update_policy {
     type                  = "PROACTIVE"
     minimal_action        = "REPLACE"
     max_surge_fixed       = 0
-    max_unavailable_fixed = 2  # ❌ downtime risk
+    max_unavailable_fixed = 3  # ❌ bad design
   }
 
   named_port {
