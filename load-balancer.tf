@@ -11,7 +11,8 @@ resource "google_compute_health_check" "hc" {
 
   http_health_check {
     port = 80  # this port is wrong to fix this, replace it with 8080
-    # uncommet the following linne of code
+    
+    # TODO uncommet the following linne of code
     #request_path = "/"
 
   }
