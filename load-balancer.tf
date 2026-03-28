@@ -1,8 +1,19 @@
 resource "google_compute_health_check" "hc" {
   name = "lab-health-check"
 
+# TODO: uncomment the followinnng code
+
+  #check_interval_sec  = 5
+  #timeout_sec         = 5
+  #healthy_threshold   = 2
+  #unhealthy_threshold = 2
+
+
   http_health_check {
-    port = 80  # ❌ WRONG
+    port = 80  # this port is wrong to fix this, replace it with 8080
+    # uncommet the following linne of code
+    #request_path = "/"
+
   }
 }
 
@@ -14,6 +25,9 @@ resource "google_compute_backend_service" "backend" {
 
   backend {
     group = google_compute_region_instance_group_manager.mig.instance_group
+    balancing_mode  = "UTILIZATION"
+    capacity_scaler = 1.0
+
   }
 }
 
