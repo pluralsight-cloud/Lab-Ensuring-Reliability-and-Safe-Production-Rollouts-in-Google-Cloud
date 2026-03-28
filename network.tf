@@ -13,6 +13,7 @@ resource "google_compute_firewall" "allow_app" {
   }
 
   source_ranges = ["0.0.0.0/0"]
+
   #TODO: uncomment the following code
   #target_tags   = ["http-server"] 
 }
