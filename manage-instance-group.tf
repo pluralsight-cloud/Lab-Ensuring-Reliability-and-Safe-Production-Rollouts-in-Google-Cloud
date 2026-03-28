@@ -30,7 +30,7 @@ resource "google_compute_region_instance_group_manager" "mig" {
 
 #auto_healing_policies {
     #health_check      = google_compute_health_check.hc.id
-    #initial_delay_sec = 60
+    #initial_delay_sec = 200
   #}
 
 }
