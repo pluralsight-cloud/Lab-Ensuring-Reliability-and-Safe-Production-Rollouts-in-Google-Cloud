@@ -45,5 +45,5 @@ resource "google_compute_global_forwarding_rule" "forwarding_rule" {
   name       = "lab-forwarding-rule"
   target     = google_compute_target_http_proxy.proxy.id
   port_range = "80"
-ip_address = google_compute_global_address.lb_ip.address
+
 }
