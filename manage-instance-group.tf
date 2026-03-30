@@ -26,7 +26,7 @@ resource "google_compute_region_instance_group_manager" "mig" {
 
 
 # Autohealig
-# TODO: ucomment the followig code to implement the autohealing.
+# TODO: uncomment the followig code to implement the autohealing.
 
 #auto_healing_policies {
     #health_check      = google_compute_health_check.hc.id
